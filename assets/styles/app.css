@@ -11,12 +11,18 @@ body {
 }
 
 header {
-  background: #023d6d;
+  background: #c97902;
   color: white;
   padding: 1rem;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   width: 100%;
+}
+
+header h1 {
+  opacity: 0;
+  transform: translateY(-4.5rem);
+  animation: slide 1s ease-out forwards, wiggle 0.2s 2s 10 ease-out none;
 }
 
 #results,
@@ -54,7 +60,8 @@ header {
 
 #calculator button {
   font: inherit;
-  background: #023d6d;
+  font-weight: bold;
+  background: #c97902;
   color: white;
   border: 1px solid #023d6d;
   padding: 1rem;
@@ -78,4 +85,27 @@ header {
 #calc-actions {
   margin-top: 1rem;
   text-align: center;
+}
+
+@keyframes slide {
+  from {
+    opacity: 0;
+    transform: translateY(-4.5rem);
+  }  
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes wiggle {
+  0% {
+      transform: rotateZ(0);
+  }
+  50% {
+      transform: rotateZ(-3deg);
+  }
+  100% {
+      transform: rotateZ(3deg);
+  }
 }
